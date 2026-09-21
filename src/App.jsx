@@ -13,9 +13,9 @@ const Part = (props) => {
 const Content = (props) => {
   return (
     <div>
-      <Part name={props.part1} units={props.units1} />
-      <Part name={props.part2} units={props.units2} />
-      <Part name={props.part3} units={props.units3} />
+      <Part name={props.part1.name} units={props.part1.units} />
+      <Part name={props.part2.name} units={props.part2.units} />
+      <Part name={props.part3.name} units={props.part3.units} />
     </div>
   )
 }
@@ -23,7 +23,9 @@ const Content = (props) => {
 const Total = (props) => {
   return (
     <p>
-      Total units: {props.units1 + props.units2 + props.units3}
+      Total units:
+      {' '}
+      {props.part1.units + props.part2.units + props.part3.units}
     </p>
   )
 }
@@ -31,14 +33,20 @@ const Total = (props) => {
 const App = () => {
   const course = 'BS Information Technology'
 
-  const part1 = 'CSIT Subject 1'
-  const units1 = 3
+  const part1 = {
+    name: 'CSIT340',
+    units: 3
+  }
 
-  const part2 = 'CSIT Subject 2'
-  const units2 = 3
+  const part2 = {
+    name: 'CSIT321',
+    units: 3
+  }
 
-  const part3 = 'CSIT Subject 3'
-  const units3 = 3
+  const part3 = {
+    name: 'CSIT327',
+    units: 3
+  }
 
   return (
     <div>
@@ -46,17 +54,14 @@ const App = () => {
 
       <Content
         part1={part1}
-        units1={units1}
         part2={part2}
-        units2={units2}
         part3={part3}
-        units3={units3}
       />
 
       <Total
-        units1={units1}
-        units2={units2}
-        units3={units3}
+        part1={part1}
+        part2={part2}
+        part3={part3}
       />
     </div>
   )
