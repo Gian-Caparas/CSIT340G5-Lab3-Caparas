@@ -49,7 +49,7 @@ const App = () => {
       ],
   }
 
-  const fullName = 'Gian Joebert B. Caparas'
+  const fullName = 'Gian Joebert B. Caparas - GWAPO'
   const courseCode = 'CSIT340'
   const section = 'G5'
 
